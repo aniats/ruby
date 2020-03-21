@@ -10,12 +10,12 @@ def get_res(money)
     case value
     when 15
         money *= 0.1
-    when 13, 14
+    when 13..14
         money *= 0.02
-    when 10, 11, 12
-    when 8, 9
+    when 10..12
+    when 8..9
         money -= money * 0.02
-    when 6, 7
+    when 6..7
         money -= money * 0.1
     else
         money -= money * 0.5
