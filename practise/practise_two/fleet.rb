@@ -1,5 +1,5 @@
 class Fleet
-    attr_reader :cars, :grades
+    attr_reader :cars
 
     def initialize(cars = [])
         @cars = Array.new
