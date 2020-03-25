@@ -1,4 +1,4 @@
-str = "name--Anna"
+str = "name--"
 if str =~ /name--/
     str1 = str[6, str.length]
 end
