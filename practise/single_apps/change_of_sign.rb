@@ -11,9 +11,9 @@ end
 
 def get_sign(value)
     if value < 0
-        return '-' #corresponds for negative
+        return :negative
     end
-    '+'
+    :positive
 end
 
 def print_array(array)
@@ -31,37 +31,31 @@ def print_res(array, amount)
 end
 
 def solve_with_cycles(array)
-    res = Array.new
+    res = []
     cur_idx = 0
     cur_sign = get_sign(array[0])
-    amount_of_changes = 0
-
     for number in array
         cur_idx += 1
-        if (number < 0 && cur_sign == '+') || (number > 0 && cur_sign == '-')
+        if (get_sign(number) != cur_sign)
             cur_sign = get_sign(number)
             res.push(cur_idx)
-            amount_of_changes += 1
         end
     end
-    print_res(res, amount_of_changes)
+    print_res(res, res.length)
 end
 
 def solve_with_iterators(array)
     cur_sign = get_sign(array[0])
     amount_of_changes = 0
-    cur_idx = 0
-    res = Array.new
+    res = []
 
-    array.each do |number|
-        cur_idx += 1
-        if (number < 0 && cur_sign == '+') || (number > 0 && cur_sign == '-')
+    array.each_with_index do |number, index|
+        if (get_sign(number) != cur_sign)
             cur_sign = get_sign(number)
-            res.push(cur_idx)
-            amount_of_changes += 1
+            res.push(index + 1)
         end
     end
-    print_res(res, amount_of_changes)
+    print_res(res, res.length)
 end
 
 if __FILE__ == $0
