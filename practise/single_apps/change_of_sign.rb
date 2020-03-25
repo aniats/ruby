@@ -1,3 +1,8 @@
+=begin
+Program counts changes of sign in array 
+and prints idxs where
+the sign has been changed
+=end
 
 def main
     print_array(input_data)
