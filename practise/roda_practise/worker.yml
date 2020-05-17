@@ -1,0 +1,22 @@
+---
+people:
+  - name: Иван
+    patronymic: Иванович
+    surname: Семёнов
+    email: ivan.semenov@example.com
+    avatar: https://www.gravatar.com/avatar/c941144838e03143e77a9fd40cb36dfa?d=retro&s=400
+  - name: Сергей
+    patronymic: Александрович
+    surname: Краснов
+    email: sergey.krasnov@example.com
+    avatar: https://www.gravatar.com/avatar/d15aaf8ed63262edbc364c9395d54da4?d=retro&s=400
+  - name: Наталья
+    patronymic: Владимировна
+    surname: Лихачёва
+    email: natalia.lihacheva@example.com
+    avatar: https://www.gravatar.com/avatar/4a236e4c48d7a8acb16e7221fdad03e3?d=retro&s=400
+  - name: Пётр
+    patronymic: Алексеевич
+    surname: Соловьёв
+    email: petr.soloviev@example.com
+    avatar: https://www.gravatar.com/avatar/267d7ae01920c7ed15b40fdac2c5eed8?d=retro&s=400
