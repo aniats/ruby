@@ -6,16 +6,11 @@
   <div class="large-12 cell">
     <% form({method: :get}, {obj: @params}) do |f| %>
       <div class="grid-x grid-padding-x">
-        <% unless @params[:errors].empty? %>
+        <% if @params.failure? %>
           <div class="large-12 cell callout warning">
             <p>
               Параметры фильтра введены неверно, данные не были отфильтрованы
             </p>
-            <ul>
-              <% @params[:errors].each do |error| %>
-                <li><%= error %></li>
-              <% end %>
-            </ul>
           </div>
         <% end %>
 

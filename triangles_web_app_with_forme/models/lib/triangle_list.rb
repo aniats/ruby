@@ -20,6 +20,11 @@ class TriangleList
   end
 
   def filter(min, max)
+    if min > max
+      temp = min
+      min = max
+      max = temp
+    end
     @list.select { |triangle| triangle.area > min.to_f && triangle.area < max.to_f}
   end
 

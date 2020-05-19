@@ -1,37 +1,20 @@
-<% if @params && !@params[:errors].empty? %>
-  <div class="large-12 cell callout">
-    <p>При заполнении формы возникли ошибки</p>
-    <ul>
-      <% @params[:errors].each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <div class="large-12 cell">
-  <form method="post">
+  <% form({method: :post}, { obj: @params }) do |f| %>
     <div class="grid-container">
       <div class="grid-x grid-padding-x">
         <div class="large-12 cell">
-          <label>Первая сторона
-            <input type="text" placeholder="5" name="first" value="<%= @params && @params[:first] %>">
-          </label>
+          <%= f.input(:first, type: :text, placeholder: '5', label: 'Первая сторона') %>
         </div>
         <div class="large-12 cell">
-          <label>Вторая сторона
-            <input type="text" placeholder="5" name="second" value="<%= @params && @params[:second] %>">
-          </label>
+          <%= f.input(:second, type: :text, placeholder: '5', label: 'Вторая сторона') %>
         </div>
         <div class="large-12 cell">
-          <label>Третья сторона
-            <input type="text" placeholder="5" name="third" value="<%= @params && @params[:third] %>">
-          </label>
+          <%= f.input(:third, type: :text, placeholder: '5', label: 'Третья сторона') %>
         </div>
         <div class="large-12 cell">
-          <input type="submit" value="Сохранить" class="button">
+          <%= f.button(value: 'Добавить треугольник', class: "button success") %>
         </div>
       </div>
     </div>
-  </form>
+  <% end %>
 </div>

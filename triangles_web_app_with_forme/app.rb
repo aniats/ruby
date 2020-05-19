@@ -34,12 +34,13 @@ class App < Roda
 
     r.on 'new_triangle' do
       r.get do
+        @params = {}
         view('new_triangle')
       end
 
       r.post do
-        @params = InputValidators.check_sides_length(r.params['first'], r.params['second'], r.params['third'])
-        if @params[:errors].empty?
+        @params = DryResultFormeAdapter.new(NewTriangleFormScheme.call(r.params))
+        if @params.success?
           opts[:list].add_triangle(Triangle.new(@params[:first], @params[:second], @params[:third]))
           r.redirect '/triangle'
         else
@@ -50,8 +51,8 @@ class App < Roda
 
     r.on 'triangle' do
       r.is do
-        @params = InputValidators.check_min_and_max(r.params['min'], r.params['max'])
-        @filtered_triangles = if @params[:errors].empty? && r.params['min'] && r.params['max']
+        @params = DryResultFormeAdapter.new(TriangleFilterFormSchema.call(r.params))
+        @filtered_triangles = if @params.success?
                                 opts[:list].filter(@params[:min], @params[:max])
                               else
                                 opts[:list].triangles_by_area

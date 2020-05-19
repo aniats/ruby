@@ -4,9 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/auto_gem.iml" filepath="$PROJECT_DIR$/.idea/modules/auto_gem.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complex_gem.iml" filepath="$PROJECT_DIR$/.idea/modules/complex_gem.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab1.iml" filepath="$PROJECT_DIR$/.idea/modules/lab1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab2.iml" filepath="$PROJECT_DIR$/.idea/modules/lab2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab21.iml" filepath="$PROJECT_DIR$/.idea/modules/lab21.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib.iml" filepath="$PROJECT_DIR$/.idea/modules/lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rating.iml" filepath="$PROJECT_DIR$/.idea/modules/rating.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ruby-university.iml" filepath="$PROJECT_DIR$/.idea/ruby-university.iml" />
