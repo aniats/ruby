@@ -1,0 +1,72 @@
+<div class="grid-x grid-padding-x">
+  <div class="large-12 cell">
+    <h2>Шкатулка с вашими треугольниками</h2>
+  </div>
+
+  <div class="large-12 cell">
+    <% form({method: :get}, {obj: @params}) do |f| %>
+      <div class="grid-x grid-padding-x">
+        <% unless @params[:errors].empty? %>
+          <div class="large-12 cell callout warning">
+            <p>
+              Параметры фильтра введены неверно, данные не были отфильтрованы
+            </p>
+            <ul>
+              <% @params[:errors].each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="large-6 cell">
+          <%= f.input(:min, type: :text, placeholder: '0.5', label: 'от: Минимальная площадь') %>
+        </div>
+
+        <div class="large-6 cell">
+          <%= f.input(:max, type: :text, placeholder: '5.0', label: 'до: Максимальная площадь') %>
+        </div>
+
+        <div class="large-12 cell">
+          <%= f.button(value: 'Фильтровать', class: 'button') %>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+
+  <div class="large-12 cell">
+    <% if @filtered_triangles.empty? %>
+      <div class="callout">
+        Согласно вашему фильтру подходящие треугольники не были найдены
+      </div>
+    <% else %>
+    <table>
+      <thead>
+      <tr>
+        <th>Номер</th>
+        <th>Площадь треугольника</th>
+        <th>Первая сторона</th>
+        <th>Вторая сторона</th>
+        <th>Третья сторона</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @filtered_triangles.each_with_index do |triangle, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= triangle.area %></td>
+          <td><%= triangle.first %></td>
+          <td><%= triangle.second %></td>
+          <td><%= triangle.third %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <% end %>
+
+    <div class="large-12 cell">
+      <a href="new_triangle" class="button">Добавить еще!!!</a>
+    </div>
+  </div>
+</div>

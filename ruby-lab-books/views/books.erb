@@ -1,0 +1,30 @@
+<div class="grid-x grid-padding-x">
+  <div class="large-12 cell">
+    <h3>Список прочитанных книг</h3>
+  </div>
+
+  <div class="large-12 cell">
+<!--    <%# if @filtered_tests.empty? %> -->
+<!--      <div class="callout">-->
+<!--        Согласно вашему фильтру никаких тестов не было найдено-->
+<!--      </div>-->
+<!--    <%# else %> -->
+      <table>
+        <thead>
+        <tr>
+          <th>Дата прочтения</th>
+          <th>Автор «Название»</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @filtered_books.each do |book| %>
+          <tr>
+            <td><%= book.date %></td>
+            <td><%= book.author + ' «' + book.name + '»' %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <%# end %>
+  </div>
+</div>

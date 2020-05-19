@@ -1,0 +1,67 @@
+
+<!--<div class="large-12 cell">-->
+<!--  <a href="books" class="button">Все книги</a>-->
+<!--</div>-->
+
+<div class="grid-x grid-padding-x">
+  <div class="large-12 cell">
+    <h3>Статистика по месяцам</h3>
+  </div>
+
+  <div class="large-12 cell">
+    <form method="get">
+      <div class="grid-x grid-padding-x">
+        <% unless @params[:errors].empty? %>
+          <div class="large-12 cell callout warning">
+            <p>
+              Параметры фильтра введены неверно, данные не были отфильтрованы
+            </p>
+            <ul>
+              <% @params[:errors].each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="large-6 cell">
+          <label>Год прочтения книг
+            <input type="text" placeholder="2020" name="year" value="<%= @params[:year] %>">
+          </label>
+        </div>
+        <div class="large-12 cell">
+          <input type="submit" value="Фильтровать" class="button">
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="large-12 cell">
+    <% if @filtered_books.empty?%>
+      <div class="callout">
+        Согласно вашему фильтру нет никакой статистики
+      </div>
+    <% else %>
+    <table>
+      <thead>
+      <tr>
+        <th>Год</th>
+        <th>Месяц</th>
+        <th>Количество книг</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @filtered_books.each do |key, value| %>
+        <% value.each_with_index do |month, index|%>
+        <tr>
+          <td><%= key %></td>
+          <td><%= @month[index] %></td>
+          <td><%= month %></td>
+        </tr>
+        <% end %>
+      <% end %>
+      </tbody>
+    </table>
+  <% end %>
+  </div>
+</div>
