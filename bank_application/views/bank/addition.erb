@@ -1,0 +1,37 @@
+<% form({ method: :post },{ obj: @parameters }) do |f| %>
+
+  <div class="grid-x grid-margin-x">
+    <h2>Пополнить вклад на определенную сумму по номеру счета, фамилии и ключевому слову</h2>
+  </div>
+
+  <div class="grid-x grid-padding-x">
+    <% unless @errors.empty? %>
+      <div class="large-12 cell callout warning">
+        <p>Мы не можем пополнить счет по следующим причинам:</p>
+        <ul>
+          <% @errors.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-12 cell">
+      <%= f.input(:account_number, type: :text, label: 'Номер счета', placeholder: '139427')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:surname, type: :text, label: 'Фамилия', placeholder: 'Иванов')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:key_word, type: :text, label: 'Ключевое слово', placeholder: 'Барсик')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:sum, type: :text, label: 'Сумма пополнения', placeholder: '100000')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.button(value: 'Пополнить', class: 'button') %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<div class="grid-x grid-margin-x">
+  <div class="cell large-12">
+    <h2>Список вкладчиков</h2>
+
+     <a href="<%= new_contributor_path %>" class="button">
+       Добавить вкладчика
+     </a>
+  </div>
+
+  <% if @contributors.size == 0 %>
+    <div class="cell large-12 callout warning">
+      В приложении нет информации о вкладчиках
+    </div>
+  <% else %>
+    <% @contributors.each do |contributor| %>
+      <div class="card cell large-4">
+        <div class="card-divider">
+          <p>Фамилия вкладчика: <%= contributor.surname %></p>
+        </div>
+        <div class="card-section">
+          <p>Имя: <%= contributor.name %></p>
+          <p>Отчество: <%= contributor.patronymic %></p>
+          <p>Сумма: <%= (contributor.sum).round(3) %></p>
+          <p>Тип Вклада: <%= contributor.deposit_type.name %></p>
+          <p>Последняя дата начисления процентов: <%= contributor.last_date %></p>
+          <p>Дата открытия вклада: <%= contributor.start_date %></p>
+          <p>
+            <a class="button" href="<%= path(contributor) %>">Информация о вкладчике</a>
+          <p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

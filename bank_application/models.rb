@@ -1,0 +1,18 @@
+# frozen_string_literal: true
+
+require_relative 'models/contributor'
+require_relative 'models/contributor_form_schema'
+require_relative 'models/contributor_form_schema'
+require_relative 'models/delete_schema'
+require_relative 'models/deposit'
+require_relative 'models/deposit_list'
+require_relative 'models/deposit_form_schema'
+require_relative 'models/addition_form_schema'
+require_relative 'models/close_account_form_schema'
+require_relative 'models/compensation_form_schema'
+require_relative 'models/delete_deposit_form_schema'
+require_relative 'models/contributor_form_schema'
+require_relative 'models/dry_result_forme_adapter'
+require_relative 'models/dry_result_forme_wrapper'
+require_relative 'models/schema_types'
+require_relative 'models/store'

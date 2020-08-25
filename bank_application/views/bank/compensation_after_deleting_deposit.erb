@@ -1,0 +1,38 @@
+<div class="grid-x grid-padding-x">
+  <div class="large-12 cell">
+    <h2>Начисления процентов после закрытия вклада</h2>
+  </div>
+
+  <div class="large-12 cell">
+    <% if @delete_deposit.empty? %>
+      <div class="callout">
+        Кажется, вкладчики с таким видом вклада не были найдены
+      </div>
+    <% else %>
+      <table>
+        <thead>
+        <tr>
+          <th>Фамилия</th>
+          <th>Имя</th>
+          <th>Отчество</th>
+          <th>Сумма на вкладе</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @delete_deposit.each do |key, value| %>
+          <tr>
+            <td><%= key %></td>
+            <td><%= value[:name] %></td>
+            <td><%= value[:patronymic] %></td>
+            <td><%= (value[:sum]).round(3) %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% end %>
+
+    <div class="large-12 cell">
+      <a href="<%= bank_path %>" class="button">В меню</a>
+    </div>
+  </div>
+</div>

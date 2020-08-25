@@ -1,0 +1,72 @@
+---
+:contributor_list:
+- :id: 1
+  :name: Иван
+  :surname: Иванов
+  :patronymic: Иванович
+  :account_number: 10001
+  :deposit_type: Отличный старт
+  :sum: 700000
+  :start_date: 2020-01-18
+  :key_word: Пушок
+  :last_date: 2020-03-23
+- :id: 2
+  :name: Елизавета
+  :surname: Попова
+  :patronymic: Петровна
+  :account_number: 13046
+  :deposit_type: Отличный старт
+  :sum: 5408082.191780822
+  :start_date: 2019-08-09
+  :key_word: Елена Леонидовна
+  :last_date: 2030-02-02
+- :id: 3
+  :name: Егор
+  :surname: Тарасов
+  :patronymic: Алексеевич
+  :account_number: 73836
+  :deposit_type: Уверенный выбор
+  :sum: 1000000
+  :start_date: 2018-07-11
+  :key_word: Чуприс
+  :last_date: 2020-04-24
+- :id: 4
+  :name: Алексей
+  :surname: Петров
+  :patronymic: Дмитриевич
+  :account_number: 47024
+  :deposit_type: Инвестиционный
+  :sum: 35490080.92767124
+  :start_date: 2016-02-27
+  :key_word: Дружок
+  :last_date: 2030-02-02
+- :id: 5
+  :name: Дмитрий
+  :surname: Купцов
+  :patronymic: Сергеевич
+  :account_number: 37492
+  :deposit_type: Абсолютное решение
+  :sum: 930279452.0547945
+  :start_date: 2012-12-18
+  :key_word: Марсель
+  :last_date: 2030-02-02
+- :id: 6
+  :name: Максим
+  :surname: Рудской
+  :patronymic: Васильевич
+  :account_number: 38460
+  :deposit_type: Стратегия лидерства
+  :sum: 2197911780.8219175
+  :start_date: 2017-09-01
+  :key_word: Матильда
+  :last_date: 2030-02-02
+- :id: 7
+  :name: Инга
+  :surname: Иванова
+  :patronymic: Дмитриевна
+  :account_number: 1345678
+  :deposit_type: Пенсионный
+  :sum: 100000.0
+  :start_date: 2013-01-01
+  :key_word: Мышка
+  :last_date: 2014-01-01

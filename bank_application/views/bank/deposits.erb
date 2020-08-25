@@ -1,0 +1,26 @@
+<div class="grid-x grid-margin-x">
+  <div class="cell large-12">
+    <h2>Список вкладов</h2>
+    <a href="<%= new_deposit_path %>" class="button">
+      Добавить вклад
+    </a>
+  </div>
+
+  <% if @deposits.size == 0 %>
+    <div class="cell large-12 callout warning">
+      В приложении нет информации о вкладах
+    </div>
+  <% else %>
+    <% @deposits.each do |deposit| %>
+      <div class="card cell large-4">
+        <div class="card-divider">
+          <p>Название вклада: <%= deposit.name %></p>
+        </div>
+        <div class="card-section">
+          <p>Процент: <%= deposit.interest %></p>
+          <p>Возможность пополнения: <%= deposit.addition %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

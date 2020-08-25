@@ -1,0 +1,38 @@
+---
+:deposit_list:
+- :id: 1
+  :name: Отличный старт
+  :interest: 5.5
+  :addition: да
+- :id: 2
+  :name: Уверенный выбор
+  :interest: 7.61
+  :addition: да
+- :id: 3
+  :name: Инвестиционный
+  :interest: 7.8
+  :addition: да
+- :id: 4
+  :name: Абсолютное решение
+  :interest: 6.4
+  :addition: нет
+- :id: 5
+  :name: Стратегия лидерства
+  :interest: 7.0
+  :addition: нет
+- :id: 6
+  :name: Пенсионный
+  :interest: 7.0
+  :addition: да
+- :id: 7
+  :name: Надежный
+  :interest: 6.3
+  :addition: нет
+- :id: 8
+  :name: Будущее
+  :interest: 9.2
+  :addition: нет
+- :id: 9
+  :name: Вперед
+  :interest: 11.0
+  :addition: нет

@@ -1,0 +1,18 @@
+<div class="grid-x">
+  <div class="cell large-12">
+    <h3>Информация о вкладчике</h3>
+
+    <p>Имя: <%= @contributor.name %></p>
+    <p>Фамилия: <%= @contributor.surname %></p>
+    <p>Отчество: <%= @contributor.patronymic %></p>
+    <p>Номер счета: <%= @contributor.account_number %></p>
+    <p>Название вклада: <%= @contributor.deposit_type.name %></p>
+    <p>Годовой процент по вкладу: <%= @contributor.deposit_type.interest %></p>
+    <p>Возможность пополнения: <%= @contributor.deposit_type.addition %></p>
+    <p>Сумма: <%= (@contributor.sum).round(3) %></p>
+    <p>Дата открытия: <%= @contributor.start_date %></p>
+    <p>Последняя дата зачисления процентов: <%= @contributor.last_date %></p>
+
+    <a class="button secondary" href="<%= contributors_path %>">Назад к списку книг</a>
+  </div>
+</div>

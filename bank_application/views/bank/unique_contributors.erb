@@ -1,0 +1,36 @@
+<div class="grid-x grid-padding-x">
+  <div class="large-12 cell">
+    <h2>Уникальные вкладчкики</h2>
+  </div>
+
+  <div class="large-12 cell">
+    <% if @surnames.empty? %>
+      <div class="callout">
+        Вкладчиков нет :/
+      </div>
+    <% else %>
+    <table>
+      <thead>
+      <tr>
+        <th>Фамилия вкладчкика</th>
+        <th>Имя вкладчкика</th>
+        <th>Отчество вкладчкика</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @surnames.each do |key, value| %>
+        <tr>
+          <td><%= key %></td>
+          <td><%= value[:name] %></td>
+          <td><%= value[:patronymic] %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <% end %>
+
+    <div class="large-12 cell">
+      <a href="<%= bank_path %>" class="button">Назад</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="grid-x grid-padding-x">
+  <div class="large-12 cell">
+    <h2>Самые популярные вклады</h2>
+  </div>
+
+  <div class="large-12 cell">
+    <% if @most_popular_deposit.empty? %>
+      <div class="callout">
+        К сожалению, наш банк пока не предлагает вклады своим клиентам
+      </div>
+    <% else %>
+      <table>
+        <thead>
+        <tr>
+          <th>Название вклада</th>
+          <th>Количество людей с таким типом вклада</th>
+          <th>Средняя сумма вклада</th>
+          <th>Последняя дата открытия вклада</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @most_popular_deposit.each do |key, value| %>
+          <tr>
+            <td><%= key.name %></td>
+            <td><%= value[:clients] %></td>
+            <td><%= value[:average_sum] %></td>
+            <td><%= value[:start_date] %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% end %>
+
+    <div class="large-12 cell">
+      <a href="<%= bank_path %>" class="button">Назад</a>
+    </div>
+  </div>
+</div>

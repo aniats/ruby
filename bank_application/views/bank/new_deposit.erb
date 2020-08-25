@@ -1,0 +1,21 @@
+<% form({ method: :post },{ obj: @parameters }) do |f| %>
+
+  <div class="grid-x grid-margin-x">
+    <h2>Добавить новый вид вклада</h2>
+  </div>
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-12 cell">
+      <%= f.input(:name, type: :text, label: 'Название вклада', placeholder: 'Вперед')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:interest, type: :text, label: 'Процент', placeholder: '6.5')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:addition, type: :select, label: 'Возможность пополнения', options: %w[да нет], add_blank: true) %>
+    </div>
+    <div class="large-12 cell">
+      <%= f.button(value: 'Добавить', class: 'button') %>
+    </div>
+  </div>
+<% end %>

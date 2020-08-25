@@ -1,0 +1,31 @@
+<% form({ method: :post },{ obj: @parameters }) do |f| %>
+
+  <div class="grid-x grid-margin-x">
+    <h2>Закрыть счет</h2>
+  </div>
+
+  <div class="grid-x grid-padding-x">
+    <% unless @errors.empty? %>
+      <div class="large-12 cell callout warning">
+        <p>Мы не можем счет счет по следующим причинам:</p>
+        <ul>
+          <% @errors.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-12 cell">
+      <%= f.input(:account_number, type: :text, label: 'Номер счета', placeholder: '139427')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:date, type: :date, label: 'Дата закрытия для начисления процентов')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.button(value: 'Закрыть счет', class: 'button') %>
+    </div>
+  </div>
+<% end %>

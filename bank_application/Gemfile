@@ -1,0 +1,21 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
+
+# gem "rails"
+
+gem 'puma', '~> 4.3'
+
+gem 'tilt', '~> 2.0'
+
+gem 'forme', '~> 1.11'
+
+gem 'rerun', '~> 0.13.0'
+
+gem 'dry-schema', '~> 1.5'
+
+gem 'roda', '~> 3.32'
+
+gem 'rubocop', '~> 0.85.0'

@@ -1,0 +1,52 @@
+<% form({ method: :post },{ obj: @parameters }) do |f| %>
+
+  <div class="grid-x grid-margin-x">
+    <h2>Добавить нового вкладчика</h2>
+  </div>
+
+  <div class="grid-x grid-padding-x">
+    <% unless @errors.empty? %>
+      <div class="large-12 cell callout warning">
+        <p>Такого вида вклада нет. Предлагаем следующие виды:</p>
+        <ul>
+          <% @errors.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-12 cell">
+      <%= f.input(:name, type: :text, label: 'Имя', placeholder: 'Иван')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:surname, type: :text, label: 'Фамилия', placeholder: 'Иванов')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:patronymic, type: :text, label: 'Отчество', placeholder: 'Иванович')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:account_number, type: :text, label: 'Номер счета', placeholder: '4673865')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:deposit_type, type: :text, label: 'Название вклада', placeholder: 'Инвестиционный')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:sum, type: :text, label: 'Сумма', placeholder: '50000')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:start_date, type: :date, label: 'Дата открытия', placeholder: '2015-12-10')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:key_word, type: :text, label: 'Ключевое слово', placeholder: 'Барсик')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:last_date, type: :date, label: 'Последняя дата начисления процентов', placeholder: '2015-12-10')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.button(value: 'Добавить', class: 'button') %>
+    </div>
+  </div>
+<% end %>

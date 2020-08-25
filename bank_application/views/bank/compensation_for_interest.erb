@@ -1,0 +1,15 @@
+<% form({ method: :post },{ obj: @parameters }) do |f| %>
+
+  <div class="grid-x grid-margin-x">
+    <h2>Начисление процентов по всем вкладам</h2>
+  </div>
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-12 cell">
+      <%= f.input(:date, type: :date, label: 'Дата для начисления процентов')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.button(value: 'Начислить', class: 'button') %>
+    </div>
+  </div>
+<% end %>
