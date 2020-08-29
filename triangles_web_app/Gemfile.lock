@@ -3,7 +3,6 @@ GEM
   specs:
     ast (2.4.0)
     ffi (1.12.2)
-    forme (1.11.0)
     jaro_winkler (1.5.4)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -14,7 +13,7 @@ GEM
       ast (~> 2.4.0)
     puma (4.3.3)
       nio4r (~> 2.0)
-    rack (2.2.2)
+    rack (2.2.3)
     rainbow (3.0.0)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
@@ -40,7 +39,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  forme (~> 1.11)
   puma (~> 4.3)
   rerun (~> 0.13.0)
   roda (~> 3.31)
