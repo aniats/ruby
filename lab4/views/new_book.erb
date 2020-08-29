@@ -1,0 +1,58 @@
+<% if @params && !@params[:errors].empty? %>
+  <div class="large-12 cell callout">
+    <p>При заполнении формы возникли ошибки</p>
+    <ul>
+      <% @params[:errors].each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="large-12 cell">
+  <form method="post">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+          <label>Название книги:
+            <input type="text" placeholder="Автостопом по галактике" name="name" value="<%= @params && @params[:name] %>">
+          </label>
+        </div>
+        <div class="large-12 cell">
+          <label>Автор:
+            <input type="text" placeholder="Дуглас Адамс" name="author" value="<%= @params && @params[:author] %>">
+          </label>
+        </div>
+        <div class="large-12 cell">
+          <label>Дата прочтения:
+            <input type="text" placeholder="ГГГГ-ММ-ДД" name="date" value="<%= @params && @params[:date] %>">
+          </label>
+        </div>
+
+        <div class="large-12 cell">
+          <label>Формат чтения:
+            <input type="text" placeholder="аудиокнига/бумажная книга/электронная книга" name="format" value="<%= @params && @params[:format] %>">
+          </label>
+        </div>
+        <div class="large-12 cell">
+          <label>Размер произведения:
+            <input type="text" placeholder="h:mm:ss/267/12304" name="size" value="<%= @params && @params[:size] %>">
+          </label>
+        </div>
+        <div class="large-12 cell">
+          <label>Оценка:
+            <input type="text" placeholder="0...10" name="mark" value="<%= @params && @params[:mark] %>">
+          </label>
+        </div>
+        <div class="large-12 cell">
+          <label>Текстовый комментарий:
+            <input type="text" placeholder="Необязательно" name="date" value="<%= @params && @params[:description] %>">
+          </label>
+        </div>
+        <div class="large-12 cell">
+          <input type="submit" value="Сохранить" class="button">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

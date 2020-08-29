@@ -1,0 +1,62 @@
+<div class="grid-x grid-padding-x">
+  <div class="large-12 cell">
+    <h3>Список прочитанных книг</h3>
+  </div>
+
+  <div class="large-12 cell">
+    <form method="get">
+      <div class="grid-x grid-padding-x">
+        <% unless @params[:errors].empty? %>
+          <div class="large-12 cell callout warning">
+            <p>
+              Параметры фильтра введены неверно, данные не были отфильтрованы
+            </p>
+            <ul>
+              <% @params[:errors].each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="large-6 cell">
+          <label>Формат прочтения книги
+            <input type="text" placeholder="аудиокнига/бумажная книга/электронная книга" name="format" value="<%= @params[:format] %>">
+          </label>
+        </div>
+        <div class="large-12 cell">
+          <input type="submit" value="Фильтровать по формату" class="button">
+        </div>
+      </div>
+    </form>
+  </div>
+
+<div class="large-12 cell">
+  <% if @filtered_books.empty?%>
+    <div class="callout">
+      Согласно вашему фильтру нет книг с таких форматом
+    </div>
+  <% else %>
+    <table>
+      <thead>
+      <tr>
+        <th>Дата прочтения</th>
+        <th>Автор «Название»</th>
+        <th>Формат прочтения</th>
+        <th>Оценка</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @filtered_books.each do |book| %>
+        <tr>
+          <td><%= book.date %></td>
+          <td><%= book.author + ' «' + book.name + '»' %></td>
+          <td><%= book.format %></td>
+          <td><%= book.mark %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% end %>
+  </div>
+</div>

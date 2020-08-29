@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список прочитанных книг</title>
+  <link rel="stylesheet" href="/css/foundation.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text">Меню</li>
+      <li><a href="main">Описание</a></li>
+      <li><a href="books">Список книг (Фильтр по формату)</a></li>
+      <li><a href="filter">Статистика чтения</a></li>
+      <li><a href="new">Добавить новую книгу</a></li>
+      <!--      <li><a href="lab-one.html">First Ruby Lab</a> </li>-->
+    </ul>
+  </div>
+</div>
+
+<div class="callout large primary">
+  <div class="row column text-center">
+    <h1>Книги</h1>
+    <h2 class="subheader">Ваш читательский дневник</h2>
+  </div>
+</div>
+<div class="grid-container">
+<!--  <div class="grid-x grid-padding-x">-->
+<!--    <div class="large-12 cell">-->
+<!--      <h2>Сайт с вашими книгами</h2>-->
+<!--    </div>-->
+<!--  </div>-->
+  <%= yield %>
+</div>
+<script src="/js/vendor/jquery.js"></script>
+<script src="/js/vendor/what-input.js"></script>
+<script src="/js/vendor/foundation.js"></script>
+</body>
+</html>
